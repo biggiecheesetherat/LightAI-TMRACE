@@ -13,7 +13,7 @@ public class Smite implements CommandExecutor {
 	if (label.equalsIgnoreCase("smite")) {
 			
 		Player player = (Player) sender;
-		player.sendMessage(ChatColor.BLUE + "Hello, LightXEthan");
+		player.sendMessage(ChatColor.BLUE + "Hello, Whoever this may be!");
 		
 		for (Player target : player.getServer().getOnlinePlayers()) {
             target.getWorld().strikeLightning(target.getLocation());
