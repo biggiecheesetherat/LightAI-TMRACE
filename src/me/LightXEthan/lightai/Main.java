@@ -249,7 +249,7 @@ public class Main extends JavaPlugin implements Listener {
         String response = requestOpenAi(prompt);
     	
     	if (response == null) {
-    		player.sendMessage("An error occurred while trying to reach the OpenAI API");
+    		player.sendMessage("An error occurred while trying to reach the tmrace API. It may be down.");
 	        return "An error occurred while trying to reach the OpenAI API";
     	}
     	
@@ -281,13 +281,12 @@ public class Main extends JavaPlugin implements Listener {
 	    	
 	        byte[] postData = prompt.getBytes(StandardCharsets.UTF_8);
 	        int postDataLength = postData.length;
-	        URL url = new URL("https://api.openai.com/v1/completions");
+	        URL url = new URL("https://api.tmrace.net/v1/completions");
 	        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 	        connection.setDoOutput(true);
 	        connection.setInstanceFollowRedirects(false);
 	        connection.setRequestMethod("POST");
 	        connection.setRequestProperty("Content-Type", "application/json");
-	        connection.setRequestProperty("Authorization", String.format("Bearer %s", apiKey));
 	        connection.setRequestProperty("charset", "utf-8");
 	        connection.setRequestProperty("Content-Length", Integer.toString(postDataLength));
 	        connection.setUseCaches(false);
