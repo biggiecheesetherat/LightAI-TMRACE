@@ -41,17 +41,6 @@ public class NPCSpawner implements CommandExecutor {
 	        
 	        player.sendMessage(ChatColor.GREEN + "NPC spawned!");
     	}
-    	
-    	if (label.equalsIgnoreCase("lightai")) {
-    		Player player = (Player) sender;
-    		
-    		if(args.length == 0) {
-    			player.sendMessage("Provide the API key. Usage: /lightai <your-apikey>");
-    			return true;
-    		}
-    		
-    		main.saveApiKey(args[0]);
-    	}
     	return true;
     }
 }
